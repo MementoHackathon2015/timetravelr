@@ -11,7 +11,7 @@
 #'  }
 #'  @export
 
-detail_memento <- function(uri = NULL, limit = 1000) {
+detail_memento <- function(uri = NULL, date_time = NULL) {
   if(is.null(uri)) 
     stop ("Please provide a uri")
   if(is.null(date_time)) 
