@@ -30,7 +30,7 @@ tt <- get_memento("http://www.base-search.net/about/de/about_sources_date_dn.php
 date_time ="2014-01-01")
 tables <- readHTMLTable(tt$response)
 oai_table <- tables[4]
-oai_df <- do.call("rbind",oai_table))
+oai_df <- do.call("rbind",oai_table)
 }
 }
 

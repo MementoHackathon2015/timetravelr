@@ -4,7 +4,7 @@
 \alias{detail_memento}
 \title{Memento details}
 \usage{
-detail_memento(uri = NULL, date_time = NULL)
+detail_memento(uri = NULL, limit = 1000)
 }
 \arguments{
 \item{uri}{desired uri of the web resource}

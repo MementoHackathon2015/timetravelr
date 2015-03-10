@@ -11,7 +11,7 @@
 #'  }
 #'  @export
 
-detail_memento <- function(uri = NULL, date_time = NULL) {
+detail_memento <- function(uri = NULL, limit = 1000) {
   if(is.null(uri)) 
     stop ("Please provide a uri")
   if(is.null(date_time)) 
@@ -22,3 +22,5 @@ detail_memento <- function(uri = NULL, date_time = NULL) {
   out <- tt_parse_js(req)
   out
 }
+
+
