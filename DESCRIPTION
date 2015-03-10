@@ -1,0 +1,9 @@
+Package: timetravelr
+Type: Package
+Title: R client to Memento Time Travel Service
+Version: 0.0.1
+Date: 2015-03-10
+Author: Najko Jahn <najko.jahn@uni-bielefeld.de>
+Maintainer: Najko Jahn <najko.jahn@uni-bielefeld.de>
+Description: Memento Time Travel Service federates access to web archives and versioning systems.
+License: What license is it under?
