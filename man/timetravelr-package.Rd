@@ -1,5 +1,5 @@
 \name{timetravelr-package}
-\alias{timetravelr-package}
+# \alias{timetravelr-package}
 \alias{timetravelr}
 \docType{package}
 \title{
