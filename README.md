@@ -1,14 +1,6 @@
 # timetravelr
 
 
-```r
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE,
-  warning = FALSE, 
-  message = FALSE
-)
-```
 
 ## About
 
@@ -49,7 +41,7 @@ tt$header
 #> [1] "<http://www.cnn.com/>; rel=\"original\", <http://wayback.archive-it.org/all/timemap/link/http://www.cnn.com/>; rel=\"timemap\"; type=\"application/link-format\", <http://wayback.archive-it.org/all/http://www.cnn.com/>; rel=\"timegate\", <http://wayback.archive-it.org/all/20050928224658/http://www.cnn.com/>; rel=\"first memento\"; datetime=\"Wed, 28 Sep 2005 22:46:58 GMT\", <http://wayback.archive-it.org/all/20110910172750/http://www.cnn.com/>; rel=\"prev memento\"; datetime=\"Sat, 10 Sep 2011 17:27:50 GMT\", <http://wayback.archive-it.org/all/20110910225503/http://www.cnn.com/>; rel=\"memento\"; datetime=\"Sat, 10 Sep 2011 22:55:03 GMT\", <http://wayback.archive-it.org/all/20110911114631/http://www.cnn.com/>; rel=\"next memento\"; datetime=\"Sun, 11 Sep 2011 11:46:31 GMT\", <http://wayback.archive-it.org/all/20150309023849/http://www.cnn.com/>; rel=\"last memento\"; datetime=\"Mon, 09 Mar 2015 02:38:49 GMT\""
 #> 
 #> $`set-cookie`
-#> [1] "JSESSIONID=A95338F9A4BA828E0574A963D6099570; Path=/; HttpOnly"
+#> [1] "JSESSIONID=7E740E2DF017C0C3E9250256411EF42B; Path=/; HttpOnly"
 #> 
 #> $`x-archive-orig-expires`
 #> [1] "Sat, 10 Sep 2011 22:56:00 GMT"
@@ -97,12 +89,76 @@ tt$header
 #> [1] "136605"
 #> 
 #> $date
-#> [1] "Tue, 10 Mar 2015 10:59:23 GMT"
+#> [1] "Tue, 10 Mar 2015 11:29:58 GMT"
 #> 
 #> $connection
 #> [1] "close"
 #> 
 #> attr(,"class")
 #> [1] "insensitive" "list"
+```
+
+## Show Mementos for a given uri and date
+
+
+```r
+detail_memento("http://cnn.com", "2001-09-11")
+#> $original_uri
+#> [1] "http://cnn.com"
+#> 
+#> $mementos
+#> $mementos$last
+#> $mementos$last$datetime
+#> [1] "2015-02-28T07:43:24Z"
+#> 
+#> $mementos$last$uri
+#> [1] "http://web.archive.org/web/20150228074324/http://www.cnn.com/"
+#> 
+#> 
+#> $mementos$`next`
+#> $mementos$`next`$datetime
+#> [1] "2001-09-11T20:03:32Z"
+#> 
+#> $mementos$`next`$uri
+#> [1] "http://wayback.vefsafn.is/wayback/20010911200332/http://cnn.com/"
+#> 
+#> 
+#> $mementos$closest
+#> $mementos$closest$datetime
+#> [1] "2001-09-11T20:03:18Z"
+#> 
+#> $mementos$closest$uri
+#> [1] "http://wayback.vefsafn.is/wayback/20010911200318/http://www.cnn.com/"
+#> [2] "http://web.archive.org/web/20010911200318/http://www.cnn.com/"       
+#> 
+#> 
+#> $mementos$first
+#> $mementos$first$datetime
+#> [1] "2000-06-20T18:02:59Z"
+#> 
+#> $mementos$first$uri
+#> [1] "http://wayback.vefsafn.is/wayback/20000620180259/http://cnn.com/"
+#> [2] "http://web.archive.org/web/20000620180259/http://cnn.com/"       
+#> 
+#> 
+#> $mementos$prev
+#> $mementos$prev$datetime
+#> [1] "2001-08-23T12:03:56Z"
+#> 
+#> $mementos$prev$uri
+#> [1] "http://wayback.vefsafn.is/wayback/20010823120356/http://www.cnn.com/"
+#> [2] "http://web.archive.org/web/20010823120356/http://www.cnn.com/"       
+#> 
+#> 
+#> 
+#> $timegate_uri
+#> [1] "http://timetravel.mementoweb.org/timegate/http://cnn.com"
+#> 
+#> $timemap_uri
+#> $timemap_uri$json_format
+#> [1] "http://timetravel.mementoweb.org/timemap/json/http://cnn.com"
+#> 
+#> $timemap_uri$link_format
+#> [1] "http://timetravel.mementoweb.org/timemap/link/http://cnn.com"
 ```
 

@@ -1,7 +1,8 @@
 #' Redirecting to a Memento
 #' 
+#' @import httr XML jsonlite
 #' @param uri desired uri of the resource
-#' @param datetime date and time of the desired archived version
+#' @param date_time date and time of the desired archived version
 #' 
 #' @examples \dontrun{
 #' # cnn

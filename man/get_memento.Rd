@@ -9,7 +9,7 @@ get_memento(uri = NULL, date_time = NULL)
 \arguments{
 \item{uri}{desired uri of the resource}
 
-\item{datetime}{date and time of the desired archived version}
+\item{date_time}{date and time of the desired archived version}
 }
 \description{
 Redirecting to a Memento

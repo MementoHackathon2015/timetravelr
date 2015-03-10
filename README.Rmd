@@ -1,6 +1,6 @@
 # timetravelr
 
-```{r}
+```{r, echo=FALSE}
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
@@ -15,7 +15,7 @@ timetravelr is an R Client for the [Memento Time Travel API](http://timetravel.m
 
 ## Installation
 
-```{r}
+```{r eval=FALSE}
 require(devtools)
 install_github("mementohackathon2015/timetravelr")
 ```
@@ -32,5 +32,11 @@ library("timetravelr")
 tt <- get_memento(uri = "http://cnn.com", date_time = "2011-09-11")
 summary(tt)
 tt$header
+```
+
+## Show Mementos for a given uri and date
+
+```{r}
+detail_memento("http://cnn.com", "2001-09-11")
 ```
 
