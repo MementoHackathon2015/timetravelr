@@ -2,6 +2,4 @@
 
 export(detail_memento)
 export(get_memento)
-import(XML)
-import(httr)
-import(jsonlite)
+export(get_timemap)

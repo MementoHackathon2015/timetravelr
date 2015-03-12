@@ -25,6 +25,67 @@ Load `timetravelr`
 ```{r}
 library("timetravelr")
 ```
+## Example
+
+The [Open Archive Initiative](http://www.openarchives.org) is listing [registered OAI conforming repositories](http://www.openarchives.org/Register/BrowseSites) for many years. With the help of web archives and the Memento Time Travel API, it should be possible to assess the evolution of OAI-PMH repositoires.
+
+### Get Timemap index
+
+```{r}
+uri <- "http://www.openarchives.org/Register/BrowseSites"
+my_oai <- get_timemap(uri)
+head(my_oai)
+```
+
+The timemap documents `r nrow(my_oai)`mementos.
+
+### Get first Memento
+
+```{r}
+my_memo <- get_memento(uri, date_time = my_oai$datetime[1])
+tables <- XML::readHTMLTable(my_memo$response)
+my_df <- plyr::rbind.fill(tables[5])
+
+head(my_df)
+```
+
+In the beginning, OAI initiative listed `r nrow(my_df)` OAI repos (date : `r my_oai$datetime[1]`)
+
+### Get time series
+
+To get a time series, we need to parse all mementos. Let's define a function
+
+```{r}
+
+oai_list <- function(uri = NULL, date_time = NULL) {
+	my_memo <- get_memento(uri, date_time)
+	tables <- XML::readHTMLTable(my_memo$response)
+	out <- plyr::rbind.fill(tables[5])
+	nrow(out)
+}
+
+my_oai <- my_oai[1:10,]
+
+tt <- plyr::ldply(my_oai$datetime, oai_list, uri = "http://www.openarchives.org/Register/BrowseSites")
+
+my_oai$counts <- tt
+
+my_oai
+```
+
+## Get Timemap
+
+```{r}
+tt <- get_timemap("http://www.base-search.net/about/de/about_sources_date_dn.php?menu=2")
+
+head(tt)
+
+tt <- get_timemap("http://cnn.com")
+
+head(tt)
+
+```
+
 
 ## Redirecting URI to a Memento
 

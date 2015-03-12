@@ -1,6 +1,5 @@
 #' Redirecting to a Memento
 #' 
-#' @import httr XML jsonlite
 #' @param uri desired uri of the resource
 #' @param date_time date and time of the desired archived version
 #' 
@@ -19,7 +18,7 @@
 #' date_time ="2014-01-01")
 #' tables <- readHTMLTable(tt$response)
 #' oai_table <- tables[4]
-#' oai_df <- do.call("rbind",oai_table))
+#' oai_df <- do.call("rbind",oai_table)
 #' }
 #' @export
 
